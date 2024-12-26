@@ -1,0 +1,75 @@
+@use 'variables.scss' as var;
+
+body {
+  block-size: 100dvb;
+  font-family: var.$font-family, serif;
+  letter-spacing: 0.05em;
+  color: var.$text-color;
+  background: linear-gradient(to bottom right, #121212 40%, var.$bg-color);;
+  background-color: var.$bg-color;
+}
+
+main {
+  @include var.flex-column-center;
+  block-size: 100%;
+}
+
+.title {
+  margin-block-end: 36px;
+  letter-spacing: 0.04em;
+  text-shadow: var.$value-color 0 0 4px;
+}
+
+.data {
+  @include var.flex-column;
+  align-items: flex-start;
+  gap: 12px;
+
+  &__value {
+    color: var.$value-color;
+  }
+}
+
+p {
+  display: flex;
+  gap: 10px;
+}
+
+.value-wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.value {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+
+  &:hover {
+    color: var.$text-color;
+    text-decoration: none;
+  }
+}
+
+.value__form {
+  max-inline-size: 40px;
+
+  &-input {
+    inline-size: 100%;
+    padding: 2px 5px;
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    background-color: #444;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.result {
+  color: var.$success-color;
+}
+

@@ -1,0 +1,16 @@
+$bg-color: #010101;
+$text-color: #fff;
+$value-color: #aaa;
+$font-family: 'Lora-Variable';
+$success-color: #228B22;
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  @include flex-column;
+  align-items: center;
+	justify-content: center;
+}
