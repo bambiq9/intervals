@@ -1,8 +1,7 @@
 @font-face {
-  font-family: 'Lora-Variable';
-  src:
-    local('Lora-Variable')
-    url(./Lora-VariableFont_wght.ttf) format('ttf supports variations');
+  font-family: Lora-Variable;
+  src: local('Lora-Variable') url("./Lora-VariableFont_wght.ttf")
+    format('ttf supports variations');
   font-display: swap;
   font-weight: 400 700;
 }

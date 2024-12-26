@@ -5,12 +5,13 @@ body {
   font-family: var.$font-family, serif;
   letter-spacing: 0.05em;
   color: var.$text-color;
-  background: linear-gradient(to bottom right, #121212 40%, var.$bg-color);;
+  background: linear-gradient(to bottom right, #121212 40%, var.$bg-color);
   background-color: var.$bg-color;
 }
 
 main {
   @include var.flex-column-center;
+
   block-size: 100%;
 }
 
@@ -22,6 +23,7 @@ main {
 
 .data {
   @include var.flex-column;
+
   align-items: flex-start;
   gap: 12px;
 
@@ -36,9 +38,9 @@ p {
 }
 
 .value-wrapper {
-	display: flex;
-	justify-content: center;
-	gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .value {
@@ -73,3 +75,6 @@ p {
   color: var.$success-color;
 }
 
+.hidden {
+  display: none;
+}

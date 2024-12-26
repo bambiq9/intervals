@@ -2,7 +2,7 @@ $bg-color: #010101;
 $text-color: #fff;
 $value-color: #aaa;
 $font-family: 'Lora-Variable';
-$success-color: #228B22;
+$success-color: #228b22;
 
 @mixin flex-column {
   display: flex;
@@ -11,6 +11,7 @@ $success-color: #228B22;
 
 @mixin flex-column-center {
   @include flex-column;
+
   align-items: center;
-	justify-content: center;
+  justify-content: center;
 }
