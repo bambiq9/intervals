@@ -1,17 +1,7 @@
+import {createElement, hideElement} from './utils.js';
+
 const intervals = [0, 20, 40, 60, 80, 100];
 let value = 0;
-
-// Create element and add class
-function createElement(elementType, className) {
-  const newElement = document.createElement(elementType);
-  newElement.classList.add(className);
-
-  return newElement;
-}
-
-function hideElement(element) {
-  element.classList.add('hidden');
-}
 
 // Render single value
 function renderValue(currentElement, value) {
@@ -34,7 +24,7 @@ function renderData(arr, val, res = [-Infinity, Infinity]) {
   arrOutput.addEventListener('click', (e) => renderArrayItemList(e, arr));
 
   renderValue(valOutput, val);
-  valOutput.addEventListener('click', renderInput);
+  valOutput.addEventListener('click', () => renderInput(valOutput));
 
   renderValue(resOutput, res);
 }
@@ -49,8 +39,8 @@ function createForm() {
 }
 
 // Render input form for value editing
-function renderInput(e) {
-  const currentElement = e.target;
+function renderInput(element) {
+  const currentElement = element;
   const currentContainer = currentElement.closest('.intervals__item') || currentElement.closest('.data__wrapper');
 
   const form = createForm();
@@ -81,7 +71,14 @@ function createArrayItemList(arr) {
 function renderArrayItemList(e, arr) {
   const currentElement = e.target;
   const listElement = createArrayItemList(arr);
-  listElement.addEventListener('click', renderInput);
+  
+  listElement.addEventListener('click', (e) => {
+    const targetElement = e.target;
+
+    if (targetElement.classList.contains('intervals__value')) {
+      renderInput(targetElement);
+    }
+  });
 
   const currentContainer = currentElement.closest('.data__wrapper');
   currentContainer.append(listElement);
